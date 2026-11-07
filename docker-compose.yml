@@ -1,0 +1,66 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: pharma
+      POSTGRES_USER: pharma
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pharma_db:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U pharma -d pharma']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+psycopg://pharma:${POSTGRES_PASSWORD}@db:5432/pharma
+      BOOTSTRAP_PASSWORD: ${BOOTSTRAP_PASSWORD:?Set BOOTSTRAP_PASSWORD in .env}
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
+      CORS_ORIGINS: http://localhost:8080
+      DEPLOYMENT_MODE: demo
+      EMBEDDED_WORKER: '0'
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - model_artifacts:/app/ml/models
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+  worker:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    command: [python, -m, backend.worker]
+    environment:
+      DATABASE_URL: postgresql+psycopg://pharma:${POSTGRES_PASSWORD}@db:5432/pharma
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
+      DEPLOYMENT_MODE: demo
+      EMBEDDED_WORKER: '0'
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - model_artifacts:/app/ml/models
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    ports:
+      - '127.0.0.1:8080:8080'
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD-SHELL, 'wget -q -O - http://127.0.0.1:8080/ > /dev/null || exit 1']
+      interval: 10s
+      timeout: 3s
+      retries: 10
+volumes:
+  pharma_db:
+  model_artifacts:

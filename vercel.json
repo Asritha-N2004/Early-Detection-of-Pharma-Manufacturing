@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "frontend": {"root": "frontend/", "framework": "vite", "buildCommand": "pnpm run build", "outputDirectory": "dist", "rewrites": [{"source": "/(.*)", "destination": "/index.html"}]},
+    "api": {"root": ".", "runtime": "container", "entrypoint": "Dockerfile.vercel"}
+  },
+  "rewrites": [
+    {"source": "/api/(.*)", "destination": {"service": "api"}},
+    {"source": "/health", "destination": {"service": "api"}},
+    {"source": "/(.*)", "destination": {"service": "frontend"}}
+  ],
+  "daemons": {
+    "worker": {"root": ".", "entrypoint": "Dockerfile.vercel", "command": ["python", "-m", "backend.worker"], "instances": {"iad1": 1}, "resources": {"requests": {"memory": "1Gi"}}}
+  }
+}

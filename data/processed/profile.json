@@ -1,0 +1,327 @@
+{
+  "fermentation": {
+    "observations": 4428,
+    "batches": 6,
+    "missing_values": 6,
+    "duplicates": 6,
+    "parameters": {
+      "agitation": {
+        "count": 402,
+        "min": 218.02387,
+        "max": 289.57303,
+        "mean": 250.16178,
+        "std": 11.87125
+      },
+      "airflow": {
+        "count": 402,
+        "min": 1.60363,
+        "max": 2.41912,
+        "mean": 2.00023,
+        "std": 0.12481
+      },
+      "biomass": {
+        "count": 402,
+        "min": 8.43087,
+        "max": 12.12683,
+        "mean": 10.00787,
+        "std": 0.63461
+      },
+      "dissolved_oxygen": {
+        "count": 402,
+        "min": 42.49989,
+        "max": 86.51422,
+        "mean": 51.05712,
+        "std": 6.00563
+      },
+      "feed_rate": {
+        "count": 402,
+        "min": 3.18778,
+        "max": 4.80448,
+        "mean": 4.02184,
+        "std": 0.26001
+      },
+      "glucose": {
+        "count": 402,
+        "min": 3.84028,
+        "max": 6.0467,
+        "mean": 4.99578,
+        "std": 0.36713
+      },
+      "lactate": {
+        "count": 402,
+        "min": 0.83535,
+        "max": 1.4095,
+        "mean": 1.09491,
+        "std": 0.10421
+      },
+      "pH": {
+        "count": 402,
+        "min": 6.9553,
+        "max": 7.67711,
+        "mean": 7.23261,
+        "std": 0.1705
+      },
+      "pressure": {
+        "count": 402,
+        "min": 0.92876,
+        "max": 1.08277,
+        "mean": 0.99771,
+        "std": 0.02516
+      },
+      "temperature": {
+        "count": 402,
+        "min": 36.67181,
+        "max": 38.87133,
+        "mean": 37.44586,
+        "std": 0.57211
+      },
+      "titer": {
+        "count": 402,
+        "min": 2.19328,
+        "max": 3.83172,
+        "mean": 3.02253,
+        "std": 0.23649
+      }
+    },
+    "label_counts": {
+      "0": 4247,
+      "1": 181
+    },
+    "synthetic": true
+  },
+  "liquid": {
+    "observations": 3624,
+    "batches": 6,
+    "missing_values": 6,
+    "duplicates": 6,
+    "parameters": {
+      "conductivity": {
+        "count": 402,
+        "min": 1.6316,
+        "max": 2.32399,
+        "mean": 2.00432,
+        "std": 0.11529
+      },
+      "filling_speed": {
+        "count": 402,
+        "min": 72.60387,
+        "max": 87.20485,
+        "mean": 80.26941,
+        "std": 2.30491
+      },
+      "filling_weight": {
+        "count": 402,
+        "min": 99.4172,
+        "max": 100.69079,
+        "mean": 100.00927,
+        "std": 0.23778
+      },
+      "mixing_speed": {
+        "count": 402,
+        "min": 138.21541,
+        "max": 244.84447,
+        "mean": 172.27184,
+        "std": 28.39807
+      },
+      "mixing_time": {
+        "count": 402,
+        "min": 20.16638,
+        "max": 36.60527,
+        "mean": 25.8158,
+        "std": 4.35886
+      },
+      "pH": {
+        "count": 402,
+        "min": 6.03992,
+        "max": 6.50812,
+        "mean": 6.25406,
+        "std": 0.08889
+      },
+      "temperature": {
+        "count": 402,
+        "min": 23.49379,
+        "max": 33.90119,
+        "mean": 25.23283,
+        "std": 1.47589
+      },
+      "viscosity": {
+        "count": 402,
+        "min": 93.7545,
+        "max": 107.04598,
+        "mean": 99.89476,
+        "std": 2.3864
+      },
+      "volume": {
+        "count": 402,
+        "min": 996.25418,
+        "max": 1003.3188,
+        "mean": 1000.11088,
+        "std": 1.15067
+      }
+    },
+    "label_counts": {
+      "0": 3438,
+      "1": 186
+    },
+    "synthetic": true
+  },
+  "sterile": {
+    "observations": 3222,
+    "batches": 6,
+    "missing_values": 6,
+    "duplicates": 6,
+    "parameters": {
+      "differential_pressure": {
+        "count": 402,
+        "min": 13.3246,
+        "max": 24.11664,
+        "mean": 15.2067,
+        "std": 1.50784
+      },
+      "duration": {
+        "count": 402,
+        "min": 26.09417,
+        "max": 43.96917,
+        "mean": 34.95074,
+        "std": 3.08924
+      },
+      "environmental_monitoring": {
+        "count": 402,
+        "min": 0.29556,
+        "max": 0.68137,
+        "mean": 0.49805,
+        "std": 0.05925
+      },
+      "equipment_status": {
+        "count": 402,
+        "min": 0.97057,
+        "max": 1.0361,
+        "mean": 0.99998,
+        "std": 0.01245
+      },
+      "humidity": {
+        "count": 402,
+        "min": 46.78017,
+        "max": 69.38483,
+        "mean": 54.45072,
+        "std": 5.72297
+      },
+      "particle_count": {
+        "count": 402,
+        "min": 1059.16596,
+        "max": 2310.98989,
+        "mean": 1750.74507,
+        "std": 210.47469
+      },
+      "temperature": {
+        "count": 402,
+        "min": 19.29381,
+        "max": 23.79046,
+        "mean": 20.87004,
+        "std": 1.13904
+      },
+      "utility_conductivity": {
+        "count": 402,
+        "min": 0.45019,
+        "max": 1.00427,
+        "mean": 0.69329,
+        "std": 0.08193
+      }
+    },
+    "label_counts": {
+      "0": 3047,
+      "1": 175
+    },
+    "synthetic": true
+  },
+  "tablet": {
+    "observations": 4428,
+    "batches": 6,
+    "missing_values": 6,
+    "duplicates": 6,
+    "parameters": {
+      "blend_uniformity": {
+        "count": 402,
+        "min": 98.23517,
+        "max": 102.19685,
+        "mean": 99.9454,
+        "std": 0.6359
+      },
+      "chopper_speed": {
+        "count": 402,
+        "min": 1136.04256,
+        "max": 1348.47861,
+        "mean": 1244.29561,
+        "std": 29.72906
+      },
+      "compression_force": {
+        "count": 402,
+        "min": 13.09424,
+        "max": 16.57047,
+        "mean": 14.88645,
+        "std": 0.61735
+      },
+      "disintegration_time": {
+        "count": 402,
+        "min": 5.91784,
+        "max": 8.75684,
+        "mean": 7.42619,
+        "std": 0.54723
+      },
+      "drying_temperature": {
+        "count": 402,
+        "min": 54.75735,
+        "max": 60.16222,
+        "mean": 57.38633,
+        "std": 0.91165
+      },
+      "drying_time": {
+        "count": 402,
+        "min": 35.61021,
+        "max": 44.27112,
+        "mean": 39.7771,
+        "std": 1.38238
+      },
+      "granulation_temperature": {
+        "count": 402,
+        "min": 28.4258,
+        "max": 38.87579,
+        "mean": 32.12854,
+        "std": 2.87777
+      },
+      "hardness": {
+        "count": 402,
+        "min": 6.84546,
+        "max": 8.56964,
+        "mean": 7.94949,
+        "std": 0.25112
+      },
+      "impeller_speed": {
+        "count": 402,
+        "min": 133.26897,
+        "max": 241.61155,
+        "mean": 151.68201,
+        "std": 15.05578
+      },
+      "moisture": {
+        "count": 402,
+        "min": 2.66462,
+        "max": 4.80935,
+        "mean": 3.41876,
+        "std": 0.58107
+      },
+      "tablet_weight": {
+        "count": 402,
+        "min": 496.73953,
+        "max": 503.16221,
+        "mean": 499.82883,
+        "std": 1.14459
+      }
+    },
+    "label_counts": {
+      "0": 4249,
+      "1": 179
+    },
+    "synthetic": true
+  }
+}
